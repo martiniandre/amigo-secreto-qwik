@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Form, Link, globalAction$, z, zod$ } from "@builder.io/qwik-city";
+import { type DocumentHead, Form, Link, routeAction$, z, zod$ } from "@builder.io/qwik-city";
 
 
 interface IUser {
@@ -10,7 +10,7 @@ interface IUser {
 }
 
 
-export const useLogin = globalAction$(
+export const useLogin = routeAction$(
   async (actions) => {
     const response = await fetch("http://localhost:3333/auth", {
       method: "POST",
@@ -46,7 +46,10 @@ export default component$(() => {
         <button type="submit" class="transition-all duration-500 rounded-lg p-3 text-sm bg-blue-700 text-white hover:bg-blue-600">login</button>
         <Link href="/auth/register" class="text-blue-400 text-sm">Doesn't have an account?</Link>
       </Form>
-    </section >
+    </section>
   )
-
 })
+
+export const head: DocumentHead = {
+  title: 'Login',
+};

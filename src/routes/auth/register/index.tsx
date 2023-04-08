@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Form, Link, globalAction$, z, zod$ } from "@builder.io/qwik-city";
+import { type DocumentHead, Form, Link, routeAction$, z, zod$ } from "@builder.io/qwik-city";
 
 
 interface IData {
@@ -9,7 +9,7 @@ interface IData {
 }
 
 
-export const useRegister = globalAction$(
+export const useRegister = routeAction$(
   async (actions) => {
     const response = await fetch("http://localhost:3333/users/register", {
       method: "POST",
@@ -53,5 +53,8 @@ export default component$(() => {
       </Form>
     </section >
   )
-
 })
+
+export const head: DocumentHead = {
+  title: 'Register',
+};
