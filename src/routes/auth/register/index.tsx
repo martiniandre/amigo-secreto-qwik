@@ -37,16 +37,16 @@ export default component$(() => {
         <h1 class="text-xl text-white mb-3">Welcome!!</h1>
         <div class="">
           <input name="name" placeholder="name" class="border rounded-lg w-full border-black p-3 text-sm placeholder:text-sm focus-within:border-white focus-within:border-2" />
-          {action.value?.fieldErrors?.name && action.value?.fieldErrors?.name.map((message) => <p class="text-red-700 mt-1" key={message}>{message}</p>)}
+          {action.value?.fieldErrors?.name && action.value?.fieldErrors?.name.map((message) => <p class="text-red-700 mt-1 text-xs" key={message}>{message}</p>)}
 
         </div>
         <div class="">
           <input name="email" type="email" placeholder="email" class="border rounded-lg w-full border-black p-3 text-sm placeholder:text-sm focus-within:border-white focus-within:border-2" />
-          {action.value?.fieldErrors?.email && action.value?.fieldErrors?.email.map((message) => <p class="text-red-700 mt-1" key={message}>{message}</p>)}
+          {action.value?.fieldErrors?.email && action.value?.fieldErrors?.email.map((message) => <p class="text-red-700 mt-1 text-xs" key={message}>{message}</p>)}
         </div>
         <div class="">
           <input name="password" type="password" placeholder="password" class="border rounded-lg w-full border-black p-3 text-sm placeholder:text-sm focus-within:border-white focus-within:border-2" />
-          {action.value?.fieldErrors?.password && action.value?.fieldErrors?.password.map((message) => <p class="text-red-700 mt-1" key={message}>{message}</p>)}
+          {action.value?.fieldErrors?.password && action.value?.fieldErrors?.password.map((message) => <p class="text-red-700 mt-1 text-xs" key={message}>{message}</p>)}
         </div>
         <button type="submit" class="transition-all duration-500 rounded-lg p-3 text-sm bg-blue-700 text-white hover:bg-blue-600">Register</button>
         <Link href="/auth/login" class="text-blue-400 text-sm">Already have an account?</Link>
